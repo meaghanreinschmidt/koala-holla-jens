@@ -52,3 +52,9 @@ Upon completion of the project you'll need to provide not only the source (via G
 Your final product may look something like this:
 
 ![sample](sample.png)
+
+
+- [x] Post Route on client to server
+- [x] Server side post handling 
+- [ ] server side get handling
+- [ ] Get route on client from server
