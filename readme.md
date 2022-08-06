@@ -59,5 +59,8 @@ Your final product may look something like this:
 - [X] server side get handling
 - [X] Get route on client from server
 
-- [ ] Move get/post to router
+- [x] Move get/post to router
+- [x] add delete and ready for transfer buttons
+- [x] add drop down functions for gender and transfer columns
+- [x] empty input fields on add koala
 - [ ] Styling  
