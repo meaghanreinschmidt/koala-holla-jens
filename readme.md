@@ -56,5 +56,8 @@ Your final product may look something like this:
 
 - [x] Post Route on client to server
 - [x] Server side post handling 
-- [ ] server side get handling
-- [ ] Get route on client from server
+- [X] server side get handling
+- [X] Get route on client from server
+
+- [ ] Move get/post to router
+- [ ] Styling  

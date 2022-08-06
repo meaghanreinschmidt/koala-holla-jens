@@ -19,7 +19,7 @@ function setupClickListeners() {
       name: $('#nameIn').val(),
       age: $('#ageIn').val(),
       gender: $('#genderIn').val(),
-      readyForTransfer: $('#readyForTransferIn').val(),
+      ready: $('#readyForTransferIn').val(),
       notes: $('#notesIn').val(),
     };
     // call saveKoala with the new obejct
@@ -30,19 +30,39 @@ function setupClickListeners() {
 function getKoalas(){
   console.log( 'in getKoalas' );
   // ajax call to server to get koalas - GET
-  
+  $.ajax({
+    type: 'GET',
+    url: '/koalas'
+  }).then( function (response) {
+    console.log(response);
+    $('#viewKoalas').empty();
+    for(let koala of response){
+      $('#viewKoalas').append(`
+      <tr>
+      <td>${koala.name}</td>
+      <td>${koala.age}</td>
+      <td>${koala.gender}</td>
+      <td>${koala.ready}</td>
+      <td>${koala.notes}</td>
+    </tr>
+      `);
+    }
+  }).catch(function (error) {
+    console.log(error);
+    alert('Something went wrong!')
+  })
+
+
 } // end getKoalas
 
 function saveKoala( newKoala ){
   console.log( 'in saveKoala', newKoala );
   $.ajax({
     type: 'POST',
-    url: '/koala',
+    url: '/koalas',
     data: newKoala
   }).then(function (response) {
     console.log(response);
     getKoalas();
-  })
-  // ajax call to server to get koalas - POST
- 
+  });
 }
