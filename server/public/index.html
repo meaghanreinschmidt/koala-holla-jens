@@ -19,7 +19,7 @@
   <section id="addKoala">
     <h2>Add Koala</h2>
     <input type="text" id="nameIn" value="" placeholder="Name">
-    <input type="text" id="ageIn" value="" placeholder="Age">
+    <input type="number" id="ageIn" value="" placeholder="Age">
     <label for="genderIn"></label>
     <select name="genderIn" id="genderIn">
       <option value="">Gender</option>
@@ -30,8 +30,8 @@
     <label for="readyForTransferIn"></label>
     <select name="readyForTransferIn" id="readyForTransferIn">
       <option value="">Ready for Transfer</option>
-      <option value="true">True</option>
-      <option value="false">False</option>
+      <option value="Y">Yes</option>
+      <option value="N">No</option>
     </select>
     <!-- <input type="text" id="readyForTransferIn" value="" placeholder="Transfer"> -->
     <input type="text" id="notesIn" value="" placeholder="Notes">
@@ -42,6 +42,7 @@
     <table>
       <thead>
         <tr>
+          <th>ID</th>
           <th>Name</th>
           <th>Age</th>
           <th>Gender</th>

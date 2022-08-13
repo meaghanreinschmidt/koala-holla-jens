@@ -63,4 +63,18 @@ Your final product may look something like this:
 - [x] add delete and ready for transfer buttons
 - [x] add drop down functions for gender and transfer columns
 - [x] empty input fields on add koala
-- [ ] Styling  
+- [ ] Styling
+
+- [X] `npm install pg`
+- [X] Create database in postico
+- [X] CREATE TABLE with id, name, gender, age, ready_to_transfer, notes
+- [X] INSERT INTO VALUES
+- [X] Add pool.js file and change name of database
+- [X] Add `const pool` to router.js
+- [X] Change GET code in router.js
+- [X] Change POST code in router.js
+- [X] Click Handler for delete 
+- [ ] Add PUT for mark ready column
+- [ ] Clean up client
+
+- [ ] Add `database.sql` file
