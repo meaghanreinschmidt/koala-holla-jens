@@ -5,6 +5,7 @@ $(document).ready(function () {
   // Establish Click Listeners
   setupClickListeners()
   $('body').on('click', '.delete-koala', deleteKoala);
+  $('body').on('click', '.update-transfer-status-koala', transferKoala)
   // load existing koalas on page load
   getKoalas();
 }); // end doc ready
@@ -47,8 +48,8 @@ function getKoalas() {
     $('#viewKoalas').empty();
     for (let koala of response) {
       // ID from database for delete button
-      console.log(`${koala.ready_to_transfer}`);
-      if (`${koala.ready_to_transfer}` === 'false') {
+      let transferButton = checkTransferStatus(koala)
+      console.log(transferButton);
         $('#viewKoalas').append(`
         <tr>
         <td>${koala.id}</td>
@@ -57,24 +58,10 @@ function getKoalas() {
         <td>${koala.gender}</td>
         <td>${koala.ready_to_transfer}</td>
         <td>${koala.notes}</td>
-        <td><button>Ready for Transfer</button></td>
+        <td>${transferButton}</td>
         <td><button class="delete-koala" data-id="${koala.id}">Delete</button></td>
       </tr>
         `);
-      } else {
-        $('#viewKoalas').append(`
-        <tr>
-        <td>${koala.id}</td>
-        <td>${koala.name}</td>
-        <td>${koala.age}</td>
-        <td>${koala.gender}</td>
-        <td>${koala.ready_to_transfer}</td>
-        <td>${koala.notes}</td>
-        <td></td>
-        <td><button class="delete-koala" data-id="${koala.id}">Delete</button></td>
-      </tr>
-        `);
-      }
     }
   }).catch(function (error) {
     console.log(error);
@@ -112,4 +99,33 @@ function deleteKoala(){
     console.log('error in deleteKoala',error);
     alert('something went wrong');
   });
+}
+
+function checkTransferStatus(koala) {
+  if (koala.ready_to_transfer === 'N') {
+    return `<button class="update-transfer-status-koala" data-id="${koala.id}">Ready for Transfer</button>`
+} else {
+  return ''
+}
+}
+
+
+function transferKoala() {
+  const koalaId = $(this).data('id');
+  $.ajax({
+    type: 'PUT',
+    url: `/koalas/${koalaId}`,
+    data: {
+      ready_to_transfer: 'Y'
+    }
+  }).then(function (response) {
+    getKoalas();
+  }).catch(function (error) {
+    console.log(error);
+    alert('Something went wrong');
+  })
+
+  // if status = no - button exists
+  // click button change status to yes
+  // button will be removed becaus status has changed 
 }

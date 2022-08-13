@@ -1,3 +1,4 @@
+const { Router } = require('express');
 const express = require('express');
 const koalaRouter = express.Router();
 const pool = require('../modules/pool.js');
@@ -7,7 +8,7 @@ const pool = require('../modules/pool.js');
 // GET
 koalaRouter.get('/', (req, res) => {
     console.log('In GET /koalas');
-    const queryText = 'SELECT * FROM "koala";';
+    const queryText = 'SELECT * FROM "koala" ORDER BY "id";';
     pool.query(queryText).then((result) => {
         console.log('SELECT SUCCESS!', result);
         res.send(result.rows);
@@ -33,7 +34,18 @@ koalaRouter.post('/', (req, res) => {
 });
 
 // PUT
-
+koalaRouter.put('/:id', (req, res) => {
+    const koalaId = req.params.id;
+    const queryText = `UPDATE "koala"
+                       SET "ready_to_transfer" = 'Y'
+                       WHERE "id" = $1;`;
+    pool.query(queryText, [koalaId]).then((results) => {
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log('Error in PUT koala', error);
+        res.sendStatus(500);
+    });
+});
 
 // DELETE
 koalaRouter.delete('/:id', (req, res) => {

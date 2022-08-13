@@ -74,7 +74,7 @@ Your final product may look something like this:
 - [X] Change GET code in router.js
 - [X] Change POST code in router.js
 - [X] Click Handler for delete 
-- [ ] Add PUT for mark ready column
-- [ ] Clean up client
+- [X] Add PUT for mark ready column
+- [X] Clean up client
 
-- [ ] Add `database.sql` file
+- [X] Add `database.sql` file
