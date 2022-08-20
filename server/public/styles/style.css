@@ -3,6 +3,40 @@ button {
     background-color: blue;
     color: white;
 }
-/* --> Mark
 
-/* --> Oscar
+/* --> Mark */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    background-color: darkcyan;
+    color: #eee;
+    padding: 10px 0px;
+}
+
+th,
+td {
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #ddd;
+}
+
+/* --> Oscar */
+
+header {
+    padding: 60px;
+        text-align: center;
+        background: red;
+        color: white;
+        font-size: 30px;
+}
+
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:blueviolet;
+}
+

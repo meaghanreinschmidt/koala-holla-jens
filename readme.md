@@ -82,5 +82,5 @@ Your final product may look something like this:
 
 ## Git Branching Practice
 - [ ] Style Buttons (Meaghan)
-- [ ] Style Header (Mark)
-- [ ] Style Table (Oscar)
+- [ ] Style Header (Oscar)
+- [ ] Style Table (Makr)
