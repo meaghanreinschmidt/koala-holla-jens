@@ -78,3 +78,9 @@ Your final product may look something like this:
 - [X] Clean up client
 
 - [X] Add `database.sql` file
+
+
+## Git Branching Practice
+- [ ] Style Buttons (Meaghan)
+- [ ] Style Header (Mark)
+- [ ] Style Table (Oscar)
