@@ -1,5 +1,23 @@
 /* --> Meaghan
 
-/* --> Mark
+/* --> Mark */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
 
+th {
+    background-color: darkcyan;
+    color: #eee;
+    padding: 10px 0px;
+}
+
+th,
+td {
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #ddd;
+}
 /* --> Oscar
