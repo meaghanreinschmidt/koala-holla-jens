@@ -1,5 +1,18 @@
-/* --> Meaghan
+/* /* --> Meaghan
 
 /* --> Mark
 
-/* --> Oscar
+/* --> Oscar */
+
+header {
+    padding: 60px;
+        text-align: center;
+        background: red;
+        color: white;
+        font-size: 30px;
+}
+
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:blueviolet;
+}
